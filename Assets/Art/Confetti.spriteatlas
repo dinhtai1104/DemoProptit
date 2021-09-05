@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Confetti
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 1
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 5fdfa2832459d014692ca75ac4a6df7d, type: 3}
+    totalSpriteSurfaceArea: 58640
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 80e9bc506e523a84bb040e6ba4da9119, type: 3}
+  - {fileID: 21300000, guid: 19e28f802291a3d49a3659b509962b89, type: 3}
+  - {fileID: 21300000, guid: 34e71f31b6a16ec41b7b6e465c162619, type: 3}
+  - {fileID: 21300000, guid: dc6f4a337c0d3484bad83703eb9030fa, type: 3}
+  - {fileID: 21300000, guid: 6a2f3d449b45d3e40ac8bdc602820ea3, type: 3}
+  - {fileID: 21300000, guid: 54a22cb4f262c71458ea10b2e7485fc3, type: 3}
+  - {fileID: 21300000, guid: 48320c35c940c95428e270388538cbe5, type: 3}
+  - {fileID: 21300000, guid: 5508594561eb71c41841b728d2cfc3a2, type: 3}
+  - {fileID: 21300000, guid: fefd3a26480f8de49bc5fc6c57f40599, type: 3}
+  - {fileID: 21300000, guid: 722384567cbdfef4aa71b25ce3b4d17b, type: 3}
+  - {fileID: 21300000, guid: c2357c79f3c97504fb1b4c72bc3a52e6, type: 3}
+  - {fileID: 21300000, guid: f4d0196a2c0bb1f408e4dbca3550eb1c, type: 3}
+  - {fileID: 21300000, guid: 5520884b182d1cf4db1cc8d6e48c6a51, type: 3}
+  - {fileID: 21300000, guid: 639be9dd97e893549a8b7cfc34477187, type: 3}
+  - {fileID: 21300000, guid: 4647e87f13665944a91cbc5a52acf619, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Phao_Giay (3)
+  - Phao_Giay (9)
+  - Phao_Giay (7)
+  - Phao_Giay (14)
+  - Phao_Giay (12)
+  - Phao_Giay (2)
+  - Phao_Giay (11)
+  - Phao_Giay (15)
+  - Phao_Giay (13)
+  - Phao_Giay (4)
+  - Phao_Giay (6)
+  - Phao_Giay (8)
+  - Phao_Giay (1)
+  - Phao_Giay (10)
+  - Phao_Giay (5)
+  m_RenderDataMap: {}
+  m_Tag: Confetti
+  m_IsVariant: 0
