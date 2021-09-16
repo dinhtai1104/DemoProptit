@@ -71,6 +71,8 @@ namespace MyGame.Pong.UI
             loseComponent.gameObject.SetActive(false);
             pauseComponent.gameObject.SetActive(false);
             homeUI.gameObject.SetActive(true);
+            StopAllCoroutines();
+            Object.GameManager.Instance.State = Object.STATE.NONE;
         }
 
         public void PlayOnClicked()
@@ -186,11 +188,11 @@ namespace MyGame.Pong.UI
             }
             else if (playMode == GameplayMode.STAR)
             {
-                valueText = "Get the Stars\n" + current + "/" + target + "STAR";
+                valueText = "Get the Stars\n" + current + "/" + target + " STAR";
             }
             else if (playMode == GameplayMode.BREAK)
             {
-                valueText = "Break the Glasses\n" + current + "/" + target + "GLASS";
+                valueText = "Break the Glasses\n" + current + "/" + target + " GLASS";
             }
             controllerModeText.text = valueText;
 
@@ -212,6 +214,8 @@ namespace MyGame.Pong.UI
         public void ReplayOnClick()
         {
             StopAllCoroutines();
+            Object.GameManager.Instance.State = Object.STATE.NONE;
+
             Object.PoolingSystem.Instance.ResetPool();
             Object.GameManager.Instance.ReplayGame();
         }

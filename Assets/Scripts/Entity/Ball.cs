@@ -38,7 +38,7 @@ namespace MyGame.Pong.Object
             projectile.SetActive(false);
             projectile.PrepareDots(dotsNumber);
             SetKinematic(true);
-            transform.DOScale(Vector3.one, 0.25f).From(Vector3.zero);
+            transform.DOScale(Vector3.one * 0.8f, 0.25f).From(Vector3.zero);
             isReleasedBall = false;
         }
         public void BallUpdate()
@@ -106,15 +106,26 @@ namespace MyGame.Pong.Object
         private float beforeTimeParticle = 0;
         private void OnCollisionEnter2D(Collision2D collision)
         {
+
             if (Time.time - beforeTimeParticle > 0.2f)
             {
                 ParticleSystem effect = PoolingSystem.Instance.GetCollideEffect();
                 effect.gameObject.transform.position = collision.contacts[0].point;
                 effect.gameObject.SetActive(true);
-
-                SoundManager.CollideWoodSound();
+                effect.Play();
+                if (!collision.transform.CompareTag("Glass"))
+                {
+                    Debug.Log("Va cham ko vao ly");
+                    SoundManager.CollideWoodSound();
+                }
+                else
+                {
+                    Debug.Log("Va cham vao ly");
+                    SoundManager.CollideGlassSound();
+                }
 
                 beforeTimeParticle = Time.time;
+                
             }
         }
 

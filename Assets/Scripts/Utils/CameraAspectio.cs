@@ -10,7 +10,7 @@ public class CameraAspectio : MonoBehaviour
         float screenWidth = Screen.width;
         float screenHeight = Screen.height;
         float screenAspect = screenWidth * 1.0f / screenHeight;
-        float milestoneAspect = 9f / 15f;
+        float milestoneAspect = 9f / 16f;
 
         if (screenAspect <= milestoneAspect)
         {
@@ -18,7 +18,7 @@ public class CameraAspectio : MonoBehaviour
         }
         else
         {
-            Camera.main.orthographicSize = 11f; //1560f / 200f
+            Camera.main.orthographicSize = 9.6f; //1560f / 200f
         }
     }
 

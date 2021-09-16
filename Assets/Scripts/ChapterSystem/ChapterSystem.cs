@@ -77,7 +77,7 @@ namespace MyGame.Pong.UI.LevelSelect
             starCountText.text = totalStar.ToString("00") + "/" + (totalLevel * 3);
             levelCountText.text = Utils.LEVEL.ToString("00") + "/" + totalLevel;
 
-            float sizeX = 235;
+            float sizeX = 220;
             float sizeY = starSlider.rectTransform.sizeDelta.y;
 
             starSlider.rectTransform.DOSizeDelta(new Vector2(sizeX * (totalStar * 1.0f / (totalLevel * 3)), sizeY), 0.5f).From(new Vector2(0, sizeY));

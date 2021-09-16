@@ -6,7 +6,7 @@ using System;
 
 namespace MyGame.Pong.Object
 {
-    public enum STATE { WIN, LOSE, PLAYING }
+    public enum STATE { WIN, LOSE, PLAYING, NONE }
     public class GameManager : Singleton<GameManager>
     {
         public static int TotalLevel = 1;
@@ -25,6 +25,10 @@ namespace MyGame.Pong.Object
             {
                 STATE last = state;
                 state = value;
+                if (state == STATE.NONE)
+                {
+                    transform.DOKill();
+                }
                 if (last == STATE.PLAYING && state != STATE.PLAYING)
                 {
                     if (state == STATE.WIN && last == STATE.PLAYING)

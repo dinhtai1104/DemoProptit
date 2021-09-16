@@ -7,6 +7,7 @@ namespace MyGame.Pong.Object
     public class Teleport : MonoBehaviour 
     {
         public Teleport next;
+        public ParticleSystem effect;
         // Start is called before the first frame update
         private void OnTriggerEnter2D(Collider2D collision)
         {
@@ -15,7 +16,16 @@ namespace MyGame.Pong.Object
                 if (next != null)
                 {
                     collision.transform.parent.transform.position = next.transform.position;
+                    PlayEffect();
+                    next.PlayEffect();
                 }
+            }
+        }
+        public void PlayEffect()
+        {
+            if (effect)
+            {
+                effect.Play();
             }
         }
     }

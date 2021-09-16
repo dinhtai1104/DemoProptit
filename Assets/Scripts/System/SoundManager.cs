@@ -17,7 +17,9 @@ namespace MyGame.Pong.Object
             buttonSfx,
             starWin,
             explosionBall,
-            ballInPong;
+            ballInPong,
+            breakGlass,
+            collideWithGlass;
         public AudioClip[] pongCollide;
         public void PlayAudio(AudioClip au)
         {
@@ -34,6 +36,8 @@ namespace MyGame.Pong.Object
         {
             GameMaster.MusicClick += this.MusicClickHandleEvent;
             GameMaster.SoundClick += this.SoundClickHandleEvent;
+            GameMaster.MusicClick?.Invoke();
+            GameMaster.SoundClick?.Invoke();
         }
 
         private void OnDestroy()
@@ -42,7 +46,6 @@ namespace MyGame.Pong.Object
             GameMaster.SoundClick -= this.SoundClickHandleEvent;
         }
 
-        
         private void SoundClickHandleEvent()
         {
             if (Utils.SOUND)
@@ -66,11 +69,18 @@ namespace MyGame.Pong.Object
             }
         }
 
+        public static void BreakGlassSound()
+        {
+            Instance.PlayAudio(Instance.breakGlass);
+        }
         public static void BallInPongSound()
         {
             Instance.PlayAudio(Instance.ballInPong);
         }
-
+        public static void CollideGlassSound()
+        {
+            Instance.PlayAudio(Instance.collideWithGlass);
+        }
         public static void CollideWoodSound()
         {
             Instance.PlayAudio(Instance.pongCollide[UnityEngine.Random.Range(0, 2)]);

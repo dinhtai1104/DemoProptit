@@ -24,6 +24,7 @@ namespace MyGame.Pong.Object
             for (int i = 0; i < dotsNumber; i++)
             {
                 Transform dot = Instantiate(dotPrefab, transform).GetComponent<Transform>();
+                dot.localScale = Vector3.one * 0.6f;
                 projectiles.Add(dot);
             }
         }

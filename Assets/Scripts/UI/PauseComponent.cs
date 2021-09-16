@@ -60,7 +60,7 @@ namespace MyGame.Pong.UI
 
         public void HomeOnClicked()
         {
-
+            UIController.Instance.HomeOnClicked();
         }
 
         public void MusicOnClicked()
@@ -77,7 +77,7 @@ namespace MyGame.Pong.UI
 
         public void ChapterOnClicked()
         {
-
+            HomeOnClicked();
         }
     }
 }

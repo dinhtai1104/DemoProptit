@@ -33,7 +33,7 @@ namespace MyGame.Pong.UI
         private void OnEnable()
         {
             textLevelButton.text = "LEVEL " + Utils.LEVEL.ToString("00");
-            float sizeX = 235;
+            float sizeX = 220;
             float sizeY = starSlider.sizeDelta.y;
 
             int totalStar = 0;

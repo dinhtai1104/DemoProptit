@@ -8,6 +8,10 @@ TagManager:
   - Ball
   - Star
   - Saw
+  - TrueCup
+  - Cup
+  - Glass
+  - Piece
   layers:
   - Default
   - TransparentFX
@@ -15,10 +19,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Piece
+  - Ball
+  - Glass
+  - Boundary
   - 
   - 
   - 

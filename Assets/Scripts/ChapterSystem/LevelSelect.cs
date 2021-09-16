@@ -67,7 +67,7 @@ namespace MyGame.Pong.UI.LevelSelect
         {
             chapterName.text = "CHAPTER " + chapter.ToString("00");
             int levelStart = (chapter - 1) * 12 + 1;
-            int totalStar = 0, totalLevel = 12;
+            int totalStar = 0, totalLevel = 0, totalLevelPass = 0;
 
             for (int i = 0; i < 12; i++)
             {
@@ -79,20 +79,25 @@ namespace MyGame.Pong.UI.LevelSelect
                 } else
                 {
                     listLevels[i].gameObject.SetActive(true);
+                    totalStar += Utils.GetStarLevel(id);
+                    totalLevel++;
+                    if (Utils.GetStarLevel(id) != 0)
+                    {
+                        totalLevelPass++;
+                    }
                 }
-                totalStar += Utils.GetStarLevel(id);
-                totalLevel += (id <= Utils.LEVEL) ? 1 : 0;
+                
             }
 
 
             starCountText.text = totalStar.ToString("00") + "/" + (totalLevel * 3);
-            levelCountText.text = Utils.LEVEL.ToString("00") + "/" + totalLevel;
+            levelCountText.text = totalLevelPass.ToString("00") + "/" + totalLevel;
 
-            float sizeX = 235;
+            float sizeX = 220;
             float sizeY = starSlider.rectTransform.sizeDelta.y;
 
-            starSlider.rectTransform.DOSizeDelta(new Vector2(sizeX * (totalStar * 1.0f / (totalLevel * 3)), sizeY), 0.5f).From(new Vector2(0, sizeY));
-            levelSlider.rectTransform.DOSizeDelta(new Vector2(sizeX * (Utils.LEVEL * 1.0f / totalLevel), sizeY), 0.5f).From(new Vector2(0, sizeY));
+            starSlider.rectTransform.DOSizeDelta(new Vector2(sizeX * (totalStar * 1.0f / (totalLevel * 3f)), sizeY), 0.5f).From(new Vector2(0, sizeY));
+            levelSlider.rectTransform.DOSizeDelta(new Vector2(sizeX * (totalLevelPass * 1.0f / totalLevel), sizeY), 0.5f).From(new Vector2(0, sizeY));
 
         }
 

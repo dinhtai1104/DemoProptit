@@ -65,7 +65,7 @@ namespace MyGame.Pong.Object
         private int indexExplosionBall = 0;
         public ParticleSystem GetExplosion()
         {
-            if (indexBall >= ballsPool.Count)
+            if (indexExplosionBall >= explosionBallPool.Count)
             {
                 ParticleSystem par = Instantiate(explosionBall, transform);
                 par.gameObject.SetActive(false);

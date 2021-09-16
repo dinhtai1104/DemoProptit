@@ -14,7 +14,8 @@ namespace MyGame.Pong.Object
         public Rigidbody2D rb;
 
         public SpriteRenderer sr;
-
+        public ParticleSystem dropBallParticle;
+        public ParticleSystem dropWaterOutCup;
         private void Start()
         {
             rb = GetComponent<Rigidbody2D>();
@@ -40,13 +41,13 @@ namespace MyGame.Pong.Object
             niceShotPic.color = Color.white;
             niceShotPic.sprite = previewNiceImage[Random.Range(0, previewNiceImage.Length)];
             niceShotPic.SetNativeSize();
-
+            dropBallParticle.Play();
             Sequence sq = DOTween.Sequence();
             sq.Join(niceShotPic.rectTransform.DOScale(Vector3.one, 0.3f))
                 .Join(niceShotPic.rectTransform.DOLocalMoveY(120f, 0.3f).From(Vector3.zero))
                 .Append(niceShotPic.DOFade(0, 0.3f).SetDelay(0.5f))
                 .Append(transform.DOScale(Vector3.zero, 0.25f).OnComplete(() => gameObject.SetActive(false)));
-
+            sq.SetDelay(0.5f);
             UI.UIController.Instance.UpdateTarget();
             return;
             StartCoroutine(CheckAngleLose(() =>
