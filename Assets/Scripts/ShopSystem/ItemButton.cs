@@ -40,6 +40,8 @@ namespace MyGame.Pong.UI.Shop
         {
             this.tab = tab;
         }
+
+
         public void OnPointerClick(PointerEventData eventData)
         {
             switch (type)

@@ -12,6 +12,11 @@ public static class GameMaster
     public static GameEvent ReplayGame;
     public static GameEvent SoundClick;
     public static GameEvent MusicClick;
+    //public static GameEvent SoundBallWithGround;
+    //public static GameEvent SoundBallWithStar;
+    //public static GameEvent SoundBallWithGlass;
+
+
 
     public delegate void GameLoad(int pLevel);
     public static GameLoad LoadLevel; // Click vao button Level o Level Select

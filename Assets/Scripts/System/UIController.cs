@@ -32,6 +32,9 @@ namespace MyGame.Pong.UI
         [Header("Home")]
         public HomeUI homeUI;
 
+
+        public Text fpsText;
+
         private void Start()
         {
            // Utils.LoadData();
@@ -234,5 +237,29 @@ namespace MyGame.Pong.UI
             Debug.Log("Skip Onclick");
         }
         #endregion
+
+        private int frameCount = 0;
+        private float elapsedTime = 0;
+        private double frameRate = 0;
+
+        private void Update()
+        {
+            frameCount++;
+            elapsedTime += Time.deltaTime;
+            if (elapsedTime > 0.5f)
+            {
+                frameRate = System.Math.Round(frameCount / elapsedTime, 1, System.MidpointRounding.AwayFromZero);
+                frameCount = 0;
+                elapsedTime = 0;
+
+                fpsText.text = "FPS: " + frameRate;
+
+                // Update the UI size if the resolution has changed
+                //if (screenLongSide != Mathf.Max(Screen.width, Screen.height))
+                //{
+                //    UpdateUISize();
+                //}
+            }
+        }
     }
 }

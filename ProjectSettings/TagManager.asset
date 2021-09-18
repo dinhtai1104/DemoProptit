@@ -12,6 +12,7 @@ TagManager:
   - Cup
   - Glass
   - Piece
+  - Lose
   layers:
   - Default
   - TransparentFX

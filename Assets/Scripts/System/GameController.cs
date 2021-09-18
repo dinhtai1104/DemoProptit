@@ -60,6 +60,7 @@ namespace MyGame.Pong
             }
         }
         private bool canDrag = true;
+
         // Update is called once per frame
         void Update()
         {

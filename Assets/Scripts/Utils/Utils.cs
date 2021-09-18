@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //Utility
-public class Utils : MonoBehaviour
+public class Utils
 {
     const string GAME = "GAME";
     const string MUSIC_KEY = "MUSIC";
@@ -62,7 +62,7 @@ public class Utils : MonoBehaviour
         set
         {
             ballSkin = value;
-            PlayerPrefs.SetInt(BALL_KEY, ballSkin);
+            PlayerPrefs.SetInt(BALL_KEY, ballSkin); // bong duoc chon 0-10
             PlayerPrefs.SetInt(BALL_UNLOCK + ballSkin, 1); // Unlock this ball
         }
     }
@@ -95,7 +95,7 @@ public class Utils : MonoBehaviour
         {
             level = value;
             PlayerPrefs.SetInt(LEVEL_UNLOCK, level);
-            if (!PlayerPrefs.HasKey(LEVEL_COMPLETE + level))
+            if (!PlayerPrefs.HasKey(LEVEL_COMPLETE + level)) // Check star - Unlock
             {
                 PlayerPrefs.SetInt(LEVEL_COMPLETE + level, 0); // set 0 star
             }
